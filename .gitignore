@@ -1,0 +1,7 @@
+# ignore built packages
+*.pkg*
+
+# ignore source and compiled code
+/pkg
+/qemu
+/src
