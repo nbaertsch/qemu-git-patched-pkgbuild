@@ -42,7 +42,7 @@ prepare() {
   
     qemu_hd_replacement="WDC WD20EARS"
     qemu_dvd_replacement="DVD-ROM"
-    hypervisor_string_replacemnt="\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+    hypervisor_string_replacement="\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
     sed -i "s/QEMU HARDDISK/$qemu_hd_replacement/g" hw/ide/core.c
     sed -i "s/QEMU HARDDISK/$qemu_hd_replacement/g" hw/scsi/scsi-disk.c
     sed -i "s/QEMU DVD-ROM/$qemu_dvd_replacement/g" hw/ide/core.c
@@ -52,10 +52,10 @@ prepare() {
     sed -i "s/QEMU CD-ROM/$qemu_dvd_replacement/g" hw/scsi/scsi-disk.c
     sed -i 's/padstr8(buf + 8, 8, "QEMU");/padstr8(buf + 8, 8, "<WOOT>");/g' hw/ide/atapi.c
     sed -i 's/QEMU MICRODRIVE/<WOOT> MICRODRIVE/g' hw/ide/core.c
-    sed -i "s/KVMKVMKVM\\0\\0\\0/$hypervisor_string_replacemnt/g" target/i386/kvm.c
+    sed -i "s/KVMKVMKVM\\0\\0\\0/$hypervisor_string_replacement/g" target/i386/kvm.c
     sed -i 's/"bochs"/"<WOOT>"/g' block/bochs.c
     sed -i 's/"BOCHS "/"ALASKA"/g' include/hw/acpi/aml-build.h
-    sed -i 's/Microsoft Hv/$hypervisor_string_replacemnt/g' target/i386/kvm.c
+    sed -i 's/Microsoft Hv/$hypervisor_string_replacement/g' target/i386/kvm.c
   mkdir -p extra-arch-{full,headless}/usr/{bin,share/qemu}
 
 }
