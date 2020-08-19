@@ -5,5 +5,6 @@ This along with the kernel patch and common-sense changes to libvirt xml clears 
 
 # Install
 1. Clone
+1. Change string values in ``PKGBUILD`` to be unique
 1. Build with dependencies ``makepkg -s``
 1. Install with pacman ``pacman -U qemu-git-<version>.pkg.tar.zst``
