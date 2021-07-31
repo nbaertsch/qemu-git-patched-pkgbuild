@@ -1,7 +1,9 @@
 # qemu-git-patched-pkgbuild
 [qemu-git](https://www.archlinux.org/packages/extra/x86_64/qemu/) from AUR, PKGBUILD patched for anti-vm detection.
 
-This along with the kernel patch and common-sense changes to libvirt xml clears all pafish checks.
+Just replaces strings to support VM hiding.
+
+This along with thebetter-timing kernel patch and common-sense changes to libvirt xml clears all pafish checks.
 
 # Install
 1. Clone
